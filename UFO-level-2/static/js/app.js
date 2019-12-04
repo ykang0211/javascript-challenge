@@ -13,14 +13,7 @@ data.forEach((ufoData) => {
 
 // YOUR CODE HERE!
 // Get references to the tbody element, input fields and button
-var $tbody = document.querySelector("tbody");
-var $searchBtn = document.querySelector("#search");
-var $dateInput = document.querySelector("#datetime");
-var $cityInput = document.querySelector("#city");
-var $stateInput = document.querySelector("#state");
-var $countryInput = document.querySelector("#country");
-var $shapeInput = document.querySelector("#shape");
-var $commentInput = document.querySelector("#comment");
+
 
 var tableData = data;
 
