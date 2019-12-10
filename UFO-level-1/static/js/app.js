@@ -9,48 +9,36 @@ data.forEach((ufoData) => {
     var cell = row.append("td");
     cell.text(value);
 
-    // Select the button
-    var button = d3.select("#button");
-
-    button.on("click", function() {
-
-    // Select the input element and get the raw HTML node
-    var inputElement = d3.select("#datetime");
-
-    // Get the value property of the input element
-    var inputValue = inputElement.property("value");
-
-    console.log(inputValue);
-    console.log(tableData);
-
-    var filteredData = tableData.filter(ufo => ufo.datetime === inputValue);
-
-    console.log(filteredData);
-    });
-  });
+});
 });
 
+// Select the button
+var button = d3.select("button");
 
-// // Select the button
-// var button = d3.select("#button");
+button.on("click", function() {
 
-// button.on("click", function() {
+  // Select the input element and get the raw HTML node
+  var inputElement = d3.select("#datetime");
 
-//   // Select the input element and get the raw HTML node
-//   var inputElement = d3.select("#datetime");
+  // Get the value property of the input element
+  var inputValue = inputElement.property("value");
 
-//   // Get the value property of the input element
-//   var inputValue = inputElement.property("value");
+  console.log(inputValue);
+  console.log(tableData);
 
-//   console.log(inputValue);
-//   console.log(tableData);
+  var filteredData = tableData.filter(ufoData => ufoData.datetime === inputValue);
 
-//   var filteredData = tableData.filter(ufo => ufo.datetime === inputValue);
+  tbody.html(``);
 
-//   console.log(filteredData);
+  // console.log(filteredData);
 
-// });
+  filteredData.forEach((ufoData) => {
+    var row = tbody.append("tr");
+    Object.entries(ufoData).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+  
+  });
+  });
 
-
-
-
+});
