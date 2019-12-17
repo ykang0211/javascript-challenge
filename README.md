@@ -49,15 +49,15 @@ data.forEach((ufoData) => {
 });
 });
 
-Select the button
+// Select the button
 var button = d3.select("button");
 
 button.on("click", function() {
 
-  Select the input element and get the raw HTML node
+  // Select the input element and get the raw HTML node
   var inputElement = d3.select("#datetime");
 
-  Get the value property of the input element
+  // Get the value property of the input element
   var inputValue = inputElement.property("value");
 
   console.log(inputValue);
@@ -79,6 +79,7 @@ button.on("click", function() {
   });
 
 });
+
 ```
 
 ### Level 2: Multiple Search Categories (Optional)
