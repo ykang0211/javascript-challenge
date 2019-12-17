@@ -34,6 +34,53 @@ You can handle this... right? The planet Earth needs to know what we have found!
 
 * Use a date form in your HTML document and write JavaScript code that will listen for events and search through the `date/time` column to find rows that match user input.
 
+```
+// from data.js
+var tableData = data;
+
+var tbody = d3.select("tbody");
+
+data.forEach((ufoData) => {
+  var row = tbody.append("tr");
+  Object.entries(ufoData).forEach(([key, value]) => {
+    var cell = row.append("td");
+    cell.text(value);
+
+});
+});
+
+// Select the button
+var button = d3.select("button");
+
+button.on("click", function() {
+
+  // Select the input element and get the raw HTML node
+  var inputElement = d3.select("#datetime");
+
+  // Get the value property of the input element
+  var inputValue = inputElement.property("value");
+
+  console.log(inputValue);
+  console.log(tableData);
+
+  var filteredData = tableData.filter(ufoData => ufoData.datetime === inputValue);
+
+  tbody.html(``);
+
+  // console.log(filteredData);
+
+  filteredData.forEach((ufoData) => {
+    var row = tbody.append("tr");
+    Object.entries(ufoData).forEach(([key, value]) => {
+      var cell = row.append("td");
+      cell.text(value);
+  
+  });
+  });
+
+});
+```
+
 ### Level 2: Multiple Search Categories (Optional)
 
 * Complete all of Level 1 criteria.
